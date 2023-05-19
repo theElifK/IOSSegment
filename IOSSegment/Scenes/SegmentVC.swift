@@ -1,5 +1,5 @@
 //
-//  SegmentVC.swift
+//  SegmentContainerVC.swift
 //  IOSSegment
 //
 //  Created by Elif Karakolcu on 12.01.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SegmentVC: UIViewController {
+class SegmentContainerVC: UIViewController {
     
     @IBOutlet weak var segmentTwoBttn: UIButton!
     @IBOutlet weak var segmentOneBttn: UIButton!
@@ -42,7 +42,7 @@ class SegmentVC: UIViewController {
     
 }
 //MARK: - createPageViewController
-extension SegmentVC {
+extension SegmentContainerVC {
     private func createPageViewController() {
         
         pageController = UIPageViewController.init(transitionStyle: UIPageViewController.TransitionStyle.scroll, navigationOrientation: UIPageViewController.NavigationOrientation.horizontal, options: nil)
@@ -70,7 +70,7 @@ extension SegmentVC {
     
 }
 //MARK: - Button Actions
-extension SegmentVC {
+extension SegmentContainerVC {
     @IBAction func changeSegment(_ sender: UIButton) {
         switch sender.tag {
         case 0:
@@ -103,7 +103,7 @@ extension SegmentVC {
     
 }
 //MARK: - UIPageViewControllerDelegate, UIPageViewControllerDataSource
-extension SegmentVC: UIPageViewControllerDataSource, UIPageViewControllerDelegate{
+extension SegmentContainerVC: UIPageViewControllerDataSource, UIPageViewControllerDelegate{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         var index = indexofviewController(viewCOntroller: viewController)
